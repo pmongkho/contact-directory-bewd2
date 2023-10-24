@@ -11,7 +11,6 @@
 				const list = document.getElementById('list')
 
 				//display initial data
-				//display initial data
 				fetch('/contacts/')
 					.then((res) => {
 						return res.json()
@@ -28,21 +27,26 @@
 
 							let link = document.createElement('a')
 
+							// put text inside li elements
 							_id.innerHTML = `_id: ${i._id}`
 							name.innerHTML = `name: ${i.name}`
 							phone.innerHTML = `phone: ${i.phone}`
 							email.innerHTML = `email: ${i.email}`
 							address.innerHTML = `address: ${i.address}`
 
+							//append the p element to li element
 							li.appendChild(_id)
 							li.appendChild(name)
 							li.appendChild(phone)
 							li.appendChild(email)
 							li.appendChild(address)
 
+							// append li element to link element
 							link.appendChild(li)
 
+							// specify url
 							link.href = `http://localhost:8000/get-single-page/${i._id}`
+							// add classes for tailwind
 							link.classList.add(
 								'mb-4',
 								'bg-slate-800',
@@ -52,10 +56,14 @@
 								'block'
 							)
 
+							// append li to link element
 							link.appendChild(li)
 
+							// append link to list element
 							list.appendChild(link)
 						})
+
+						// append the list to the output element
 						outputDiv.appendChild(list)
 					})
 					.catch((error) => console.error(error))
@@ -130,6 +138,7 @@
 							list.appendChild(link)
 						})
 						outputDiv.appendChild(list)
+						document.querySelector('form').reset()
 						})
 						.catch((error) => {
 							console.error('Fetch error:', error)
@@ -209,7 +218,7 @@
 				<h1 class="py-4">Data</h1>
 				<div class="h-[70vh] overflow-scroll" id="data">
 					<ul
-						class="rounded-lg [&>li]:mb-4 [&>li]:bg-slate-800 [&>li]:rounded-lg [&>li]:p-2"
+						class="text-left rounded-lg [&>li]:mb-4 [&>li]:bg-slate-800 [&>li]:rounded-lg [&>li]:p-2"
 						id="list"
 					></ul>
 				</div>
