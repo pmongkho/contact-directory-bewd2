@@ -41,7 +41,7 @@
 
 							link.appendChild(li)
 
-							link.href = `http://localhost:8000/get-single-page/${i._id}`
+							link.href = `/get-single-page/${i._id}`
 							link.classList.add(
 								'mb-4',
 								'bg-slate-800',
@@ -67,7 +67,7 @@
 			<div>
 				<h1 class="py-4">Methods</h1>
 				<ul class="text-left space-y-4 w-full flex flex-col">
-					<a href="http://localhost:8000"
+					<a href='/' 
 						><button
 							id="get"
 							class="w-full py-2 px-4 bg-slate-800 rounded-lg shadow-lg flex justify-center items-center"
@@ -75,7 +75,7 @@
 						</button></a
 					>
 
-					<a href="http://localhost:8000/post-page"
+					<a href='/post-page'
 						><button
 							id="post"
 							class="w-full py-2 px-4 bg-slate-800 rounded-lg shadow-lg"
@@ -90,10 +90,8 @@
 				<form
 					action=""
 					class="flex-col flex space-y-4 [&>input]:bg-slate-800 bg-slate-800 py-8 px-4 rounded-xl w-[25vw]"
-					><p>No Forms,
-                    Click On The Data For More Options</p>
-                    </form
-				>
+					><p>No Forms, Click On The Data For More Options</p>
+				</form>
 			</div>
 
 			<div class="w-[25vw]">

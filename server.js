@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.json())
 
-const whiteList = ['http://localhost:8000']
+const whiteList = [process.env.URL]
 
 const corsOptions = {
 	origin: (origin, callback) => {
@@ -26,8 +26,6 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
-
-// middlewares
 
 // api routes
 app.get('/', (req, res) => {
@@ -45,7 +43,6 @@ app.get('/edit-page', (req, res) => {
 app.get('/delete-page', (req, res) => {
 	res.sendFile(path.join(__dirname, '/_views/delete-page.html'))
 })
-
 
 app.use('/contacts', require('./_routes/api/contact.js'))
 

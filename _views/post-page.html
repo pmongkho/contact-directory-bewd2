@@ -45,7 +45,7 @@
 							link.appendChild(li)
 
 							// specify url
-							link.href = `http://localhost:8000/get-single-page/${i._id}`
+							link.href = `/get-single-page/${i._id}`
 							// add classes for tailwind
 							link.classList.add(
 								'mb-4',
@@ -98,47 +98,47 @@
 						})
 						.then((data) => {
 							// Update the page with the retrieved data
-													data.map((i) => {
-							let li = document.createElement('li')
+							data.map((i) => {
+								let li = document.createElement('li')
 
-							let _id = document.createElement('p')
-							let name = document.createElement('p')
-							let phone = document.createElement('p')
-							let email = document.createElement('p')
-							let address = document.createElement('p')
+								let _id = document.createElement('p')
+								let name = document.createElement('p')
+								let phone = document.createElement('p')
+								let email = document.createElement('p')
+								let address = document.createElement('p')
 
-							let link = document.createElement('a')
+								let link = document.createElement('a')
 
-							_id.innerHTML = `_id: ${i._id}`
-							name.innerHTML = `name: ${i.name}`
-							phone.innerHTML = `phone: ${i.phone}`
-							email.innerHTML = `email: ${i.email}`
-							address.innerHTML = `address: ${i.address}`
+								_id.innerHTML = `_id: ${i._id}`
+								name.innerHTML = `name: ${i.name}`
+								phone.innerHTML = `phone: ${i.phone}`
+								email.innerHTML = `email: ${i.email}`
+								address.innerHTML = `address: ${i.address}`
 
-							li.appendChild(_id)
-							li.appendChild(name)
-							li.appendChild(phone)
-							li.appendChild(email)
-							li.appendChild(address)
+								li.appendChild(_id)
+								li.appendChild(name)
+								li.appendChild(phone)
+								li.appendChild(email)
+								li.appendChild(address)
 
-							link.appendChild(li)
+								link.appendChild(li)
 
-							link.href = `http://localhost:8000/get-single-page/${i._id}`
-							link.classList.add(
-								'mb-4',
-								'bg-slate-800',
-								'rounded-lg',
-								'p-2',
-								'w-full',
-								'block'
-							)
+								link.href = `http://localhost:8000/get-single-page/${i._id}`
+								link.classList.add(
+									'mb-4',
+									'bg-slate-800',
+									'rounded-lg',
+									'p-2',
+									'w-full',
+									'block'
+								)
 
-							link.appendChild(li)
+								link.appendChild(li)
 
-							list.appendChild(link)
-						})
-						outputDiv.appendChild(list)
-						document.querySelector('form').reset()
+								list.appendChild(link)
+							})
+							outputDiv.appendChild(list)
+							document.querySelector('form').reset()
 						})
 						.catch((error) => {
 							console.error('Fetch error:', error)
@@ -154,7 +154,7 @@
 			<div>
 				<h1 class="py-4">Methods</h1>
 				<ul class="text-left space-y-4 w-full flex flex-col">
-					<a href="http://localhost:8000"
+					<a href='/' 
 						><button
 							id="get"
 							class="w-full py-2 px-4 bg-slate-800 rounded-lg shadow-lg flex justify-center items-center"
@@ -162,7 +162,7 @@
 						</button></a
 					>
 
-					<a href="http://localhost:8000/post-page"
+					<a href='/post-page'
 						><button
 							id="post"
 							class="w-full py-2 px-4 bg-slate-800 rounded-lg shadow-lg"
