@@ -4,7 +4,7 @@ Getting Started:
 delete package-lock.json and node_modules file/folder
 and run: npm install
 
-To start project enter: npm start
+To start project enter: npm start,
 if successful it will display: 
 Server running on port http://localhost:8000
 in the console
