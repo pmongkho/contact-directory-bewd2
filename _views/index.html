@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact Directory</title>
+
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const outputDiv = document.getElementById('data')
+				const list = document.getElementById('list')
+
+				//display initial data
+				fetch('/contacts/')
+					.then((res) => {
+						return res.json()
+					})
+					.then((data) => {
+						data.map((i) => {
+							let li = document.createElement('li')
+
+							let _id = document.createElement('p')
+							let name = document.createElement('p')
+							let phone = document.createElement('p')
+							let email = document.createElement('p')
+							let address = document.createElement('p')
+
+							let link = document.createElement('a')
+
+							_id.innerHTML = `_id: ${i._id}`
+							name.innerHTML = `name: ${i.name}`
+							phone.innerHTML = `phone: ${i.phone}`
+							email.innerHTML = `email: ${i.email}`
+							address.innerHTML = `address: ${i.address}`
+
+							li.appendChild(_id)
+							li.appendChild(name)
+							li.appendChild(phone)
+							li.appendChild(email)
+							li.appendChild(address)
+
+							link.appendChild(li)
+
+							link.href = `http://localhost:8000/get-single-page/${i._id}`
+							link.classList.add(
+								'mb-4',
+								'bg-slate-800',
+								'rounded-lg',
+								'p-2',
+								'w-full',
+								'block'
+							)
+
+							link.appendChild(li)
+
+							list.appendChild(link)
+						})
+						outputDiv.appendChild(list)
+					})
+					.catch((error) => console.error(error))
+			})
+		</script>
+	</head>
+	<body class="text-white bg-slate-900 text-center">
+		<h1 class="py-10 border-b border-b-slate-400">INDEX Page</h1>
+		<div class="flex items-start justify-evenly pt-8 space-x-4">
+			<div>
+				<h1 class="py-4">Methods</h1>
+				<ul class="text-left space-y-4 w-full flex flex-col">
+					<a href="http://localhost:8000"
+						><button
+							id="get"
+							class="w-full py-2 px-4 bg-slate-800 rounded-lg shadow-lg flex justify-center items-center"
+							>GET
+						</button></a
+					>
+
+					<a href="http://localhost:8000/post-page"
+						><button
+							id="post"
+							class="w-full py-2 px-4 bg-slate-800 rounded-lg shadow-lg"
+							>POST</button
+						></a
+					>
+				</ul>
+			</div>
+
+			<div class="">
+				<h1 class="py-4">Form</h1>
+				<form
+					action=""
+					class="flex-col flex space-y-4 [&>input]:bg-slate-800 bg-slate-800 py-8 px-4 rounded-xl w-[25vw]"
+					><p>No Forms,
+                    Click On The Data For More Options</p>
+                    </form
+				>
+			</div>
+
+			<div class="w-[25vw]">
+				<h1 class="py-4">Data</h1>
+				<div class="h-[70vh] overflow-scroll" id="data">
+					<ul
+						class="rounded-lg [&>li]:mb-4 [&>li]:bg-slate-800 [&>li]:rounded-lg [&>li]:p-2"
+						id="list"
+					></ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

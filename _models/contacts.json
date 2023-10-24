@@ -1,0 +1,35 @@
+[
+    {
+        "_id": "5dfe8ecc-2eba-4438-8c06-fcc2e9117ef1",
+        "name": "firstName lastName",
+        "phone": "6208034444",
+        "email": "email@email.com",
+        "address": "address"
+
+    },
+        {
+        "_id": "303ab643-4059-4bdc-b272-c79e090c122d",
+        "name": "John Smith",
+        "phone": "6207571122",
+        "email": "johnemail@email.com",
+        "address": "411 S. Merchant St"
+
+    },
+        {
+        "_id": "579ba6c2-6660-49b0-b506-8c8b643ef6c5",
+        "name": "Ben Michaels",
+        "phone": "6208031522",
+        "email": "benmichs@email.com",
+        "address": "657 S. Exchange St"
+
+    },
+        {
+        "_id": "3cd6842a-5359-4617-bcea-05803b0ec237",
+        "name": "Emily Rodriguez",
+        "phone": "6203098032",
+        "email": "emilyrod@email.com",
+        "address": "808 S. Avenue St"
+
+    }
+
+]
