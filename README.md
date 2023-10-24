@@ -9,6 +9,8 @@ if successful it will display:
 Server running on port http://localhost:8000
 in the console
 
+go to http://localhost:8000
+
 Index page ("/") has two buttons: GET and POST
 
 GET retrieves all records
