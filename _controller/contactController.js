@@ -66,9 +66,6 @@ const updateContact = (req, res) => {
 
         res.status(201).json(contact)
 
-	
-
-
 }
 
 // delete
